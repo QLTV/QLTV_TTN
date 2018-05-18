@@ -35,16 +35,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.rdnu = new System.Windows.Forms.CheckBox();
+            this.rdnam = new System.Windows.Forms.CheckBox();
+            this.txtdienthoai = new System.Windows.Forms.TextBox();
+            this.txbTenNV = new System.Windows.Forms.TextBox();
+            this.txbMaNV = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTimKiemNV = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnRs = new System.Windows.Forms.Button();
@@ -80,12 +80,12 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.dtngaysinh);
+            this.groupBox1.Controls.Add(this.rdnu);
+            this.groupBox1.Controls.Add(this.rdnam);
+            this.groupBox1.Controls.Add(this.txtdienthoai);
+            this.groupBox1.Controls.Add(this.txbTenNV);
+            this.groupBox1.Controls.Add(this.txbMaNV);
             this.groupBox1.Location = new System.Drawing.Point(22, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(369, 222);
@@ -138,60 +138,60 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Mã Nhân Viên";
             // 
-            // dateTimePicker1
+            // dtngaysinh
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(144, 157);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 10;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 5, 11, 11, 23, 38, 0);
+            this.dtngaysinh.Location = new System.Drawing.Point(144, 157);
+            this.dtngaysinh.Name = "dtngaysinh";
+            this.dtngaysinh.Size = new System.Drawing.Size(200, 20);
+            this.dtngaysinh.TabIndex = 10;
+            this.dtngaysinh.Value = new System.DateTime(2018, 5, 11, 11, 23, 38, 0);
             // 
-            // checkBox2
+            // rdnu
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(215, 119);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(40, 17);
-            this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "Nữ";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.rdnu.AutoSize = true;
+            this.rdnu.Location = new System.Drawing.Point(215, 119);
+            this.rdnu.Name = "rdnu";
+            this.rdnu.Size = new System.Drawing.Size(40, 17);
+            this.rdnu.TabIndex = 9;
+            this.rdnu.Text = "Nữ";
+            this.rdnu.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // rdnam
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(144, 119);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(48, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Nam";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.rdnam.AutoSize = true;
+            this.rdnam.Location = new System.Drawing.Point(144, 119);
+            this.rdnam.Name = "rdnam";
+            this.rdnam.Size = new System.Drawing.Size(48, 17);
+            this.rdnam.TabIndex = 8;
+            this.rdnam.Text = "Nam";
+            this.rdnam.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtdienthoai
             // 
-            this.textBox3.Location = new System.Drawing.Point(144, 193);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtdienthoai.Location = new System.Drawing.Point(144, 193);
+            this.txtdienthoai.Name = "txtdienthoai";
+            this.txtdienthoai.Size = new System.Drawing.Size(200, 20);
+            this.txtdienthoai.TabIndex = 7;
             // 
-            // textBox2
+            // txbTenNV
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 6;
+            this.txbTenNV.Location = new System.Drawing.Point(144, 76);
+            this.txbTenNV.Name = "txbTenNV";
+            this.txbTenNV.Size = new System.Drawing.Size(200, 20);
+            this.txbTenNV.TabIndex = 6;
             // 
-            // textBox1
+            // txbMaNV
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 5;
+            this.txbMaNV.Location = new System.Drawing.Point(144, 31);
+            this.txbMaNV.Name = "txbMaNV";
+            this.txbMaNV.Size = new System.Drawing.Size(200, 20);
+            this.txbMaNV.TabIndex = 5;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnTimKiemNV);
             this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtTimKiem);
             this.groupBox2.Location = new System.Drawing.Point(403, 90);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(442, 72);
@@ -221,12 +221,12 @@
             this.comboBox1.Size = new System.Drawing.Size(174, 21);
             this.comboBox1.TabIndex = 1;
             // 
-            // textBox4
+            // txtTimKiem
             // 
-            this.textBox4.Location = new System.Drawing.Point(15, 30);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(110, 20);
-            this.textBox4.TabIndex = 0;
+            this.txtTimKiem.Location = new System.Drawing.Point(15, 30);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(110, 20);
+            this.txtTimKiem.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -259,6 +259,7 @@
             this.btnRs.TabIndex = 3;
             this.btnRs.Text = "Reset";
             this.btnRs.UseVisualStyleBackColor = true;
+            this.btnRs.Click += new System.EventHandler(this.btnRs_Click);
             // 
             // btnXoaNV
             // 
@@ -268,6 +269,7 @@
             this.btnXoaNV.TabIndex = 2;
             this.btnXoaNV.Text = "Xóa";
             this.btnXoaNV.UseVisualStyleBackColor = true;
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
             // 
             // btnSuaNV
             // 
@@ -277,6 +279,7 @@
             this.btnSuaNV.TabIndex = 1;
             this.btnSuaNV.Text = "Sửa";
             this.btnSuaNV.UseVisualStyleBackColor = true;
+            this.btnSuaNV.Click += new System.EventHandler(this.btnSuaNV_Click);
             // 
             // btnThemNV
             // 
@@ -286,6 +289,7 @@
             this.btnThemNV.TabIndex = 0;
             this.btnThemNV.Text = "Thêm";
             this.btnThemNV.UseVisualStyleBackColor = true;
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // lvNV
             // 
@@ -298,12 +302,13 @@
             this.columnHeader6});
             this.lvNV.FullRowSelect = true;
             this.lvNV.GridLines = true;
-            this.lvNV.Location = new System.Drawing.Point(22, 321);
+            this.lvNV.Location = new System.Drawing.Point(2, 321);
             this.lvNV.Name = "lvNV";
-            this.lvNV.Size = new System.Drawing.Size(823, 188);
+            this.lvNV.Size = new System.Drawing.Size(851, 198);
             this.lvNV.TabIndex = 4;
             this.lvNV.UseCompatibleStateImageBehavior = false;
             this.lvNV.View = System.Windows.Forms.View.Details;
+            this.lvNV.SelectedIndexChanged += new System.EventHandler(this.lvNV_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -347,6 +352,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmNhanVien";
             this.Text = "QUẢN LÍ NHÂN VIÊN";
+            this.Load += new System.EventHandler(this.frmNhanVien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -361,16 +367,16 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtngaysinh;
+        private System.Windows.Forms.CheckBox rdnu;
+        private System.Windows.Forms.CheckBox rdnam;
+        private System.Windows.Forms.TextBox txtdienthoai;
+        private System.Windows.Forms.TextBox txbTenNV;
+        private System.Windows.Forms.TextBox txbMaNV;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnTimKiemNV;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnRs;
