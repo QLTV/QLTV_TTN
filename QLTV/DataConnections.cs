@@ -10,7 +10,7 @@ namespace QLTV
 {
     public class DataConnections
     {
-        string Strcon = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLTV_TTN;Integrated Security=True";
+        string Strcon = @"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLTV_TTN;Integrated Security=True";
         public SqlConnection conn = null;
         public void OpenConnection()
         {
