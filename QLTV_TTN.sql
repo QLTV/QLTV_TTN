@@ -10,9 +10,8 @@
 --đăng nhập 
 Create Database QLTV_TTN
 go
-use QLTV_TTN
+use QLTV_TTN 
 go
-
 
 	Create table DANGNHAP
 	(
@@ -78,9 +77,11 @@ go
 	 MANV VARCHAR(8) REFERENCES NHANVIEN(MANV) ON DELETE CASCADE,
 	 MASV VARCHAR(8) REFERENCES SINHVIEN(MASV) ON DELETE CASCADE,
 	 NGAYMUON DATE
+
 	)
 go
-
+ALTER TABLE dbo.PHIEUMUON ADD MASACH VARCHAR(10)
+ALTER TABLE dbo.PHIEUMUON ADD TENSACH NVARCHAR(30)
 	--insert DANGNHAP
 	INSERT dbo.DANGNHAP( TaiKhoan, MatKhau )
 	VALUES  ( N'admin','123456'),
@@ -135,7 +136,7 @@ BEGIN
 	WHERE MANV=@MANV
 END		
 GO
-
+ 
 
 -----------------Sach
 	--Them
@@ -163,3 +164,30 @@ BEGIN
 	WHERE MASACH=@MASACH
 END		
 GO
+
+INSERT dbo.SACH
+        ( MASACH ,
+          TENSACH ,
+          TACGIA ,
+          THELOAI ,
+          MAVT ,
+          NXB ,
+          NAMXB ,
+          SOLUONG
+        )
+VALUES  ( 'S01' , -- MASACH - varchar(8)
+          N'Số Đỏ' , -- TENSACH - nvarchar(50)
+          N'Vũ Trọng Phụng' , -- TACGIA - nvarchar(50)
+          N'Tiểu Thuyết' , -- THELOAI - nvarchar(50)
+          'VT01' , -- MAVT - varchar(8)
+          N'Giáo Dục' , -- NXB - nvarchar(50)
+          '2008/11/20' , -- NAMXB - date
+          1  -- SOLUONG - int
+        )
+
+		INSERT dbo.VITRISACH
+		        ( MAVT, VITRI, TENKE )
+		VALUES  ( 'VT02', -- MAVT - varchar(8)
+		          N'02', -- VITRI - nvarchar(50)
+		          N'A3'  -- TENKE - nvarchar(50)
+		          )
