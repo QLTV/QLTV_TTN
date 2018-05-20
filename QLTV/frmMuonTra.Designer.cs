@@ -31,7 +31,6 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.lvMuonSach = new System.Windows.Forms.ListView();
-			this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -113,7 +112,6 @@
 			// lvMuonSach
 			// 
 			this.lvMuonSach.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12,
@@ -128,10 +126,6 @@
 			this.lvMuonSach.TabIndex = 1;
 			this.lvMuonSach.UseCompatibleStateImageBehavior = false;
 			this.lvMuonSach.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader9
-			// 
-			this.columnHeader9.Text = "STT";
 			// 
 			// columnHeader10
 			// 
@@ -285,7 +279,8 @@
 			this.btnMuonSach.TabIndex = 12;
 			this.btnMuonSach.Text = "Mượn Sách";
 			this.btnMuonSach.UseVisualStyleBackColor = true;
- 			// 
+			this.btnMuonSach.Click += new System.EventHandler(this.btnMuonSach_Click);
+			// 
 			// txtphieumuon
 			// 
 			this.txtphieumuon.Location = new System.Drawing.Point(530, 39);
@@ -603,7 +598,6 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;

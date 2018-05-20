@@ -27,6 +27,7 @@ namespace QLTV
 
 		#region ShowData
 		DataConnections connect = new DataConnections();
+		List<string> lstPM = new List<string>();
 		public void ShowData()
 		{
 			connect.OpenConnection();
@@ -46,7 +47,8 @@ namespace QLTV
 				listview.SubItems.Add(reader.GetString(1));
 				listview.SubItems.Add(reader.GetString(2));
  				listview.SubItems.Add(reader.GetDateTime(3).ToString("dd/MM/yyyy"));
- 
+
+				lstPM.Add(reader.GetString(0));
 				lvMuonSach.Items.Add(listview);
 			}
 			reader.Close();
@@ -113,7 +115,36 @@ namespace QLTV
 				frmctsach.Close();
 			}
 		}
+		private void btnMuonSach_Click(object sender, EventArgs e)
+		{
+			bool check = true;
+			Random rd = new Random();
+			int x = rd.Next(0, 20);
+			if (x < 10)
+				txtphieumuon.Text = "P0" + x.ToString();
+			if (x > 10)
+				txtphieumuon.Text = "P" + x.ToString();
+			foreach (string str in lstPM)
+			{
+				if (str.Contains(txtphieumuon.Text))
+				{
+					check = false;
+					break;
+				}
+				check = true;
+			}
+			if(check == true)
+			{
+				ListViewItem liv = new ListViewItem(txtmasach.Text);
+				liv.SubItems.Add(txttensach.Text);
+				liv.SubItems.Add(txtphieumuon.Text);
+				liv.SubItems.Add(arrMA[1]);
+				liv.SubItems.Add(arrMA[0]);
+				liv.SubItems.Add(dtngaymuon.Value.ToString("dd/MM/yyyy"));
 
+				lvMuonSach.Items.Add(liv);
+			}
+		}
 		string[] arrMA = new string[2];
 		private void cbmasv_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -123,10 +154,12 @@ namespace QLTV
 		}
 		private void cbmanv_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string valueNV = cbmasv.SelectedItem.ToString();
+			string valueNV = cbmanv.SelectedItem.ToString();
 			string[] arrNV = valueNV.Split('-');
 			arrMA[1] = arrNV[0];
 		}
 		#endregion
+
+		
 	}
 }
