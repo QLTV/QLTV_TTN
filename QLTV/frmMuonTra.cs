@@ -102,7 +102,22 @@ namespace QLTV
 			txttensach.Text = valueten;
 		}
 
- 
+		public void ThemPM()
+		{
+ 			SqlCommand cmd = new SqlCommand();
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.CommandText = "MuonSach";
+			cmd.Connection = connect.conn;
+			connect.OpenConnection();
+			cmd.Parameters.Add("@MAPM", SqlDbType.NVarChar).Value = txtphieumuon.Text;
+			cmd.Parameters.Add("@MANV", SqlDbType.NVarChar).Value = arrMA[1];
+			cmd.Parameters.Add("@MASV", SqlDbType.NVarChar).Value = arrMA[0];
+			cmd.Parameters.Add("@NGAYMUON", SqlDbType.Date).Value = dtngaymuon.Value.ToString("dd/MM/yyyy");
+			cmd.Parameters.Add("@MASACH", SqlDbType.Float).Value = txtmasach.Text;
+			cmd.Parameters.Add("@TENSACH", SqlDbType.Float).Value = txttensach.Text;
+ 			cmd.ExecuteNonQuery();
+			connect.CloseConnection();
+ 		}
 		#region Controller
 		private void btnthongtinsach_Click(object sender, EventArgs e)
 		{
@@ -143,6 +158,14 @@ namespace QLTV
 				liv.SubItems.Add(dtngaymuon.Value.ToString("dd/MM/yyyy"));
 
 				lvMuonSach.Items.Add(liv);
+
+
+				var result = MessageBox.Show("Bạn có muốn lưu ?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+ 				if (result == DialogResult.Yes)
+				{
+ 					ThemPM();
+				}
+				 
 			}
 		}
 		string[] arrMA = new string[2];
