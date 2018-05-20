@@ -43,7 +43,7 @@
             this.txbMaNV = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTimKiemNV = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbTK = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -189,7 +189,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnTimKiemNV);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbbTK);
             this.groupBox2.Controls.Add(this.txtTimKiem);
             this.groupBox2.Location = new System.Drawing.Point(403, 90);
             this.groupBox2.Name = "groupBox2";
@@ -206,19 +206,20 @@
             this.btnTimKiemNV.TabIndex = 2;
             this.btnTimKiemNV.Text = "Tìm Kiếm";
             this.btnTimKiemNV.UseVisualStyleBackColor = true;
+            this.btnTimKiemNV.Click += new System.EventHandler(this.btnTimKiemNV_Click);
             // 
-            // comboBox1
+            // cbbTK
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbbTK.FormattingEnabled = true;
+            this.cbbTK.Items.AddRange(new object[] {
             "Theo Mã Nhân Viên ",
             "Theo Tên Nhân Viên ",
             "Theo Ngày Sinh ",
             "Theo Điện Thoại"});
-            this.comboBox1.Location = new System.Drawing.Point(146, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cbbTK.Location = new System.Drawing.Point(146, 29);
+            this.cbbTK.Name = "cbbTK";
+            this.cbbTK.Size = new System.Drawing.Size(174, 21);
+            this.cbbTK.TabIndex = 1;
             // 
             // txtTimKiem
             // 
@@ -370,7 +371,7 @@
         private System.Windows.Forms.TextBox txbMaNV;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnTimKiemNV;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbTK;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnThoat;
