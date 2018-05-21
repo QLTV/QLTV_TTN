@@ -56,29 +56,27 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.lvTraSach = new System.Windows.Forms.ListView();
-			this.ColumnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.btnLamMoi = new System.Windows.Forms.Button();
 			this.btnTraSach = new System.Windows.Forms.Button();
-			this.btnTimKiem = new System.Windows.Forms.Button();
-			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.dttra = new System.Windows.Forms.DateTimePicker();
+			this.dtmuon = new System.Windows.Forms.DateTimePicker();
+			this.txtmasacht = new System.Windows.Forms.TextBox();
+			this.txtmasvtra = new System.Windows.Forms.TextBox();
+			this.txtmapm = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.txttienphat = new System.Windows.Forms.TextBox();
+			this.label12 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -340,9 +338,7 @@
 			// lvTraSach
 			// 
 			this.lvTraSach.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ColumnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
@@ -357,19 +353,10 @@
 			this.lvTraSach.UseCompatibleStateImageBehavior = false;
 			this.lvTraSach.View = System.Windows.Forms.View.Details;
 			// 
-			// ColumnHeader1
-			// 
-			this.ColumnHeader1.Text = "STT";
-			// 
 			// columnHeader2
 			// 
 			this.columnHeader2.Text = "Mã Phiếu Mượn";
 			this.columnHeader2.Width = 95;
-			// 
-			// columnHeader3
-			// 
-			this.columnHeader3.Text = "Mã Nhân Viên";
-			this.columnHeader3.Width = 95;
 			// 
 			// columnHeader4
 			// 
@@ -398,15 +385,15 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.textBox4);
+			this.groupBox1.Controls.Add(this.txttienphat);
+			this.groupBox1.Controls.Add(this.label12);
 			this.groupBox1.Controls.Add(this.btnLamMoi);
 			this.groupBox1.Controls.Add(this.btnTraSach);
-			this.groupBox1.Controls.Add(this.btnTimKiem);
-			this.groupBox1.Controls.Add(this.dateTimePicker2);
-			this.groupBox1.Controls.Add(this.dateTimePicker1);
-			this.groupBox1.Controls.Add(this.textBox3);
-			this.groupBox1.Controls.Add(this.textBox2);
-			this.groupBox1.Controls.Add(this.textBox1);
+			this.groupBox1.Controls.Add(this.dttra);
+			this.groupBox1.Controls.Add(this.dtmuon);
+			this.groupBox1.Controls.Add(this.txtmasacht);
+			this.groupBox1.Controls.Add(this.txtmasvtra);
+			this.groupBox1.Controls.Add(this.txtmapm);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.label3);
@@ -419,79 +406,69 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Thông Tin";
 			// 
-			// textBox4
-			// 
-			this.textBox4.Location = new System.Drawing.Point(138, 210);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(146, 20);
-			this.textBox4.TabIndex = 13;
-			// 
 			// btnLamMoi
 			// 
-			this.btnLamMoi.Location = new System.Drawing.Point(631, 208);
+			this.btnLamMoi.Location = new System.Drawing.Point(209, 199);
 			this.btnLamMoi.Name = "btnLamMoi";
 			this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
 			this.btnLamMoi.TabIndex = 12;
 			this.btnLamMoi.Text = "Làm Mới";
 			this.btnLamMoi.UseVisualStyleBackColor = true;
-			// 
+ 			// 
 			// btnTraSach
 			// 
-			this.btnTraSach.Location = new System.Drawing.Point(506, 208);
+			this.btnTraSach.Location = new System.Drawing.Point(84, 199);
 			this.btnTraSach.Name = "btnTraSach";
 			this.btnTraSach.Size = new System.Drawing.Size(75, 23);
 			this.btnTraSach.TabIndex = 11;
 			this.btnTraSach.Text = "Trả Sách";
 			this.btnTraSach.UseVisualStyleBackColor = true;
+ 			// 
+			// dttra
 			// 
-			// btnTimKiem
+			this.dttra.CustomFormat = "dd/MM/yyyy";
+			this.dttra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dttra.Location = new System.Drawing.Point(506, 101);
+			this.dttra.Name = "dttra";
+			this.dttra.Size = new System.Drawing.Size(200, 20);
+			this.dttra.TabIndex = 9;
 			// 
-			this.btnTimKiem.Location = new System.Drawing.Point(13, 210);
-			this.btnTimKiem.Name = "btnTimKiem";
-			this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
-			this.btnTimKiem.TabIndex = 10;
-			this.btnTimKiem.Text = "Tìm Kiếm";
-			this.btnTimKiem.UseVisualStyleBackColor = true;
+			// dtmuon
 			// 
-			// dateTimePicker2
+			this.dtmuon.CustomFormat = "dd/MM/yyyy";
+			this.dtmuon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtmuon.Location = new System.Drawing.Point(506, 48);
+			this.dtmuon.Name = "dtmuon";
+			this.dtmuon.Size = new System.Drawing.Size(200, 20);
+			this.dtmuon.TabIndex = 8;
 			// 
-			this.dateTimePicker2.Location = new System.Drawing.Point(506, 101);
-			this.dateTimePicker2.Name = "dateTimePicker2";
-			this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-			this.dateTimePicker2.TabIndex = 9;
+			// txtmasacht
 			// 
-			// dateTimePicker1
+			this.txtmasacht.Location = new System.Drawing.Point(138, 145);
+			this.txtmasacht.Name = "txtmasacht";
+			this.txtmasacht.ReadOnly = true;
+			this.txtmasacht.Size = new System.Drawing.Size(146, 20);
+			this.txtmasacht.TabIndex = 7;
 			// 
-			this.dateTimePicker1.Location = new System.Drawing.Point(506, 48);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-			this.dateTimePicker1.TabIndex = 8;
+			// txtmasvtra
 			// 
-			// textBox3
+			this.txtmasvtra.Location = new System.Drawing.Point(138, 54);
+			this.txtmasvtra.Name = "txtmasvtra";
+			this.txtmasvtra.Size = new System.Drawing.Size(146, 20);
+			this.txtmasvtra.TabIndex = 6;
+ 			// 
+			// txtmapm
 			// 
-			this.textBox3.Location = new System.Drawing.Point(138, 145);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(146, 20);
-			this.textBox3.TabIndex = 7;
-			// 
-			// textBox2
-			// 
-			this.textBox2.Location = new System.Drawing.Point(138, 94);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(146, 20);
-			this.textBox2.TabIndex = 6;
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(138, 48);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(146, 20);
-			this.textBox1.TabIndex = 5;
+			this.txtmapm.Location = new System.Drawing.Point(138, 101);
+			this.txtmapm.Name = "txtmapm";
+			this.txtmapm.ReadOnly = true;
+			this.txtmapm.Size = new System.Drawing.Size(146, 20);
+			this.txtmapm.TabIndex = 5;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(367, 101);
+			this.label5.Location = new System.Drawing.Point(429, 107);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(47, 13);
 			this.label5.TabIndex = 4;
@@ -500,7 +477,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(367, 54);
+			this.label4.Location = new System.Drawing.Point(413, 57);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(64, 13);
 			this.label4.TabIndex = 3;
@@ -518,7 +495,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(21, 97);
+			this.label2.Location = new System.Drawing.Point(21, 57);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(67, 13);
 			this.label2.TabIndex = 1;
@@ -527,11 +504,28 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(21, 48);
+			this.label1.Location = new System.Drawing.Point(21, 101);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(80, 13);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Mã phiếu mượn";
+			// 
+			// txttienphat
+			// 
+			this.txttienphat.Location = new System.Drawing.Point(506, 148);
+			this.txttienphat.Name = "txttienphat";
+			this.txttienphat.ReadOnly = true;
+			this.txttienphat.Size = new System.Drawing.Size(200, 20);
+			this.txttienphat.TabIndex = 14;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(429, 155);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(59, 13);
+			this.label12.TabIndex = 13;
+			this.label12.Text = "Tiền Phạt :";
 			// 
 			// frmMuonTra
 			// 
@@ -540,6 +534,7 @@
 			this.ClientSize = new System.Drawing.Size(815, 516);
 			this.Controls.Add(this.tabControl1);
 			this.Name = "frmMuonTra";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "QUẢN LÍ MƯỢN TRẢ SÁCH";
 			this.Load += new System.EventHandler(this.frmMuonTra_Load);
 			this.tabControl1.ResumeLayout(false);
@@ -561,9 +556,9 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtmasacht;
+        private System.Windows.Forms.TextBox txtmasvtra;
+        private System.Windows.Forms.TextBox txtmapm;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -584,20 +579,16 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListView lvTraSach;
-        private System.Windows.Forms.ColumnHeader ColumnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnTraSach;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dttra;
+        private System.Windows.Forms.DateTimePicker dtmuon;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
@@ -608,5 +599,7 @@
 		private System.Windows.Forms.Button btnthongtinsach;
 		private System.Windows.Forms.ComboBox cbmanv;
 		private System.Windows.Forms.ComboBox cbmasv;
+		private System.Windows.Forms.TextBox txttienphat;
+		private System.Windows.Forms.Label label12;
 	}
 }

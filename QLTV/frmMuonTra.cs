@@ -16,19 +16,19 @@ namespace QLTV
         public frmMuonTra()
         {
             InitializeComponent();
+			ShowDataPM();
 		}
-		public static string ma = string.Empty;
-		private void frmMuonTra_Load(object sender, EventArgs e)
+ 		private void frmMuonTra_Load(object sender, EventArgs e)
 		{
 			ShowMaSV();
 			ShowMaNV();
-			ShowData();
+			ShowPhieuTra();
 		}
-
+		#region Phiếu Mượn
 		#region ShowData
 		DataConnections connect = new DataConnections();
 		List<string> lstPM = new List<string>();
-		public void ShowData()
+		public void ShowDataPM()
 		{
 			connect.OpenConnection();
 			SqlCommand cmd = new SqlCommand();
@@ -40,15 +40,15 @@ namespace QLTV
 			lvMuonSach.Items.Clear();
 			while (reader.Read())
 			{
-				ListViewItem listview = new ListViewItem();
-				listview.SubItems.Add(reader.GetString(4));
-				listview.SubItems.Add(reader.GetString(5));
+				ListViewItem listview = new ListViewItem(reader.GetString(4));
+ 				listview.SubItems.Add(reader.GetString(5));
 				listview.SubItems.Add(reader.GetString(0));
 				listview.SubItems.Add(reader.GetString(1));
 				listview.SubItems.Add(reader.GetString(2));
  				listview.SubItems.Add(reader.GetDateTime(3).ToString("dd/MM/yyyy"));
 
-				lstPM.Add(reader.GetString(0));
+
+ 				lstPM.Add(reader.GetString(0));
 				lvMuonSach.Items.Add(listview);
 			}
 			reader.Close();
@@ -95,14 +95,12 @@ namespace QLTV
 		}
 
 		#endregion
-
 		public void GETVALUE(string valuema ,string valueten)
 		{
 			txtmasach.Text = valuema;
 			txttensach.Text = valueten;
 		}
-
-		public void ThemPM()
+ 		public void ThemPM()
 		{
  			SqlCommand cmd = new SqlCommand();
 			cmd.CommandType = CommandType.StoredProcedure;
@@ -112,9 +110,9 @@ namespace QLTV
 			cmd.Parameters.Add("@MAPM", SqlDbType.NVarChar).Value = txtphieumuon.Text;
 			cmd.Parameters.Add("@MANV", SqlDbType.NVarChar).Value = arrMA[1];
 			cmd.Parameters.Add("@MASV", SqlDbType.NVarChar).Value = arrMA[0];
-			cmd.Parameters.Add("@NGAYMUON", SqlDbType.Date).Value = dtngaymuon.Value.ToString("dd/MM/yyyy");
-			cmd.Parameters.Add("@MASACH", SqlDbType.Float).Value = txtmasach.Text;
-			cmd.Parameters.Add("@TENSACH", SqlDbType.Float).Value = txttensach.Text;
+			cmd.Parameters.Add("@NGAYMUON", SqlDbType.Date).Value = dtngaymuon.Value;
+			cmd.Parameters.Add("@MASACH", SqlDbType.NVarChar).Value = txtmasach.Text;
+			cmd.Parameters.Add("@TENSACH", SqlDbType.NVarChar).Value =txttensach.Text;
  			cmd.ExecuteNonQuery();
 			connect.CloseConnection();
  		}
@@ -181,8 +179,40 @@ namespace QLTV
 			string[] arrNV = valueNV.Split('-');
 			arrMA[1] = arrNV[0];
 		}
+
 		#endregion
 
+		#endregion
+
+		#region Phiếu Trả
+		string masv = "";
+		public void ShowPhieuTra()
+		{
+			connect.OpenConnection();
+			SqlCommand cmd = new SqlCommand();
+			cmd.CommandType = CommandType.Text;
+			cmd.CommandText = "select * from MUONTRA";
+			cmd.Connection = connect.conn;
+
+			SqlDataReader reader = cmd.ExecuteReader();
+			lvTraSach.Items.Clear();
+			while (reader.Read())
+			{
+				ListViewItem listview = new ListViewItem();
+				listview.SubItems.Add(reader.GetString(0));
+				listview.SubItems.Add(reader.GetString(5));
+				listview.SubItems.Add(reader.GetString(1));
+				listview.SubItems.Add(reader.GetDateTime(2).ToString("dd/MM/yyyy"));
+				listview.SubItems.Add(reader.GetDateTime(3).ToString("dd/MM/yyyy"));
+				listview.SubItems.Add(reader.GetDouble(4).ToString());
+
+ 				lvTraSach.Items.Add(listview);
+			}
+			reader.Close();
+		}
 		
+		#endregion
+
+
 	}
 }
