@@ -210,7 +210,33 @@ namespace QLTV
 			}
 			reader.Close();
 		}
-		
+		public void TraSach()
+		{
+			SqlCommand cmd = new SqlCommand();
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.CommandText = "TraSach";
+			cmd.Connection = connect.conn;
+			connect.OpenConnection();
+			cmd.Parameters.Add("@MAPM", SqlDbType.NVarChar).Value = txtmapm.Text;
+			cmd.Parameters.Add("@MASACH", SqlDbType.NVarChar).Value = txtmasacht.Text;
+			cmd.Parameters.Add("@NGAYMUON", SqlDbType.Date).Value = dtmuon.Value;
+			cmd.Parameters.Add("@NGAYTRA", SqlDbType.Date).Value = dttra.Value;
+			cmd.Parameters.Add("@TIENPHAT", SqlDbType.Float).Value = double.Parse(txttienphat.Text);
+			cmd.Parameters.Add("@MASV", SqlDbType.NVarChar).Value = masv;
+			cmd.ExecuteNonQuery();
+			connect.CloseConnection();
+		}
+		public void XoaPM()
+		{
+			SqlCommand cmd = new SqlCommand();
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.CommandText = "XoaPM";
+			cmd.Connection = connect.conn;
+			connect.OpenConnection();
+			cmd.Parameters.Add("@MAPM", SqlDbType.NVarChar).Value = txtmapm.Text;
+			cmd.ExecuteNonQuery();
+			connect.CloseConnection();
+		}
 		#endregion
 
 
