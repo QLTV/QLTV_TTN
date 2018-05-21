@@ -181,7 +181,6 @@ namespace QLTV
 		}
 
 		#endregion
-
 		#endregion
 
 		#region Phiếu Trả
@@ -236,6 +235,53 @@ namespace QLTV
 			cmd.Parameters.Add("@MAPM", SqlDbType.NVarChar).Value = txtmapm.Text;
 			cmd.ExecuteNonQuery();
 			connect.CloseConnection();
+		}
+
+		private void txtmasvtra_TextChanged(object sender, EventArgs e)
+		{
+			connect.OpenConnection();
+			SqlCommand cmd = new SqlCommand();
+			cmd.CommandType = CommandType.Text;
+			cmd.CommandText = "select * from PHIEUMUON WHERE MASV" + " LIKE N'%" + txtmasvtra.Text + "%'";
+			cmd.Connection = connect.conn;
+
+			SqlDataReader reader = cmd.ExecuteReader();
+			lvTraSach.Items.Clear();
+			while (reader.Read())
+			{
+				txtmapm.Text = reader.GetString(0);
+				txtmasacht.Text = reader.GetString(1);
+				masv = reader.GetString(2);
+				dtmuon.Value = reader.GetDateTime(3);
+
+			}
+			reader.Close();
+		}
+		private void btnTraSach_Click(object sender, EventArgs e)
+		{
+			ListViewItem liv = new ListViewItem(txtmapm.Text);
+			liv.SubItems.Add(masv);
+			liv.SubItems.Add(txtmasacht.Text);
+			liv.SubItems.Add(dtmuon.Value.ToString("dd/MM/yyyy"));
+			liv.SubItems.Add(dttra.Value.ToString("dd/MM/yyyy"));
+			liv.SubItems.Add(txttienphat.Text);
+			lvTraSach.Items.Add(liv);
+			var result = MessageBox.Show("Bạn có muốn lưu ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (result == DialogResult.Yes)
+			{
+				TraSach();
+				XoaPM();
+			}
+		}
+
+		private void btnLamMoi_Click(object sender, EventArgs e)
+		{
+			txtmasvtra.ResetText();
+			txtmapm.ResetText();
+			txtmasacht.ResetText();
+			dtmuon.ResetText();
+			dttra.ResetText();
+			txttienphat.ResetText();
 		}
 		#endregion
 

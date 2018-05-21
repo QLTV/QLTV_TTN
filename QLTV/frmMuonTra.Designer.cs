@@ -63,6 +63,8 @@
 			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txttienphat = new System.Windows.Forms.TextBox();
+			this.label12 = new System.Windows.Forms.Label();
 			this.btnLamMoi = new System.Windows.Forms.Button();
 			this.btnTraSach = new System.Windows.Forms.Button();
 			this.dttra = new System.Windows.Forms.DateTimePicker();
@@ -75,8 +77,6 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txttienphat = new System.Windows.Forms.TextBox();
-			this.label12 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -406,6 +406,23 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Thông Tin";
 			// 
+			// txttienphat
+			// 
+			this.txttienphat.Location = new System.Drawing.Point(506, 148);
+			this.txttienphat.Name = "txttienphat";
+			this.txttienphat.ReadOnly = true;
+			this.txttienphat.Size = new System.Drawing.Size(200, 20);
+			this.txttienphat.TabIndex = 14;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(429, 155);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(59, 13);
+			this.label12.TabIndex = 13;
+			this.label12.Text = "Tiền Phạt :";
+			// 
 			// btnLamMoi
 			// 
 			this.btnLamMoi.Location = new System.Drawing.Point(209, 199);
@@ -414,7 +431,8 @@
 			this.btnLamMoi.TabIndex = 12;
 			this.btnLamMoi.Text = "Làm Mới";
 			this.btnLamMoi.UseVisualStyleBackColor = true;
- 			// 
+			this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+			// 
 			// btnTraSach
 			// 
 			this.btnTraSach.Location = new System.Drawing.Point(84, 199);
@@ -423,7 +441,8 @@
 			this.btnTraSach.TabIndex = 11;
 			this.btnTraSach.Text = "Trả Sách";
 			this.btnTraSach.UseVisualStyleBackColor = true;
- 			// 
+			this.btnTraSach.Click += new System.EventHandler(this.btnTraSach_Click);
+			// 
 			// dttra
 			// 
 			this.dttra.CustomFormat = "dd/MM/yyyy";
@@ -456,7 +475,8 @@
 			this.txtmasvtra.Name = "txtmasvtra";
 			this.txtmasvtra.Size = new System.Drawing.Size(146, 20);
 			this.txtmasvtra.TabIndex = 6;
- 			// 
+			this.txtmasvtra.TextChanged += new System.EventHandler(this.txtmasvtra_TextChanged);
+			// 
 			// txtmapm
 			// 
 			this.txtmapm.Location = new System.Drawing.Point(138, 101);
@@ -509,23 +529,6 @@
 			this.label1.Size = new System.Drawing.Size(80, 13);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Mã phiếu mượn";
-			// 
-			// txttienphat
-			// 
-			this.txttienphat.Location = new System.Drawing.Point(506, 148);
-			this.txttienphat.Name = "txttienphat";
-			this.txttienphat.ReadOnly = true;
-			this.txttienphat.Size = new System.Drawing.Size(200, 20);
-			this.txttienphat.TabIndex = 14;
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(429, 155);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(59, 13);
-			this.label12.TabIndex = 13;
-			this.label12.Text = "Tiền Phạt :";
 			// 
 			// frmMuonTra
 			// 
