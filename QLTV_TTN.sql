@@ -187,18 +187,45 @@ END
 
 
  INSERT dbo.SINHVIEN 
-         ( MASV ,
-           HOTEN ,
-           GIOITINH ,
-           NGAYSINH ,
-           DIENTHOAI ,
-           LOP
-         )
- VALUES  ( 'SV01' , -- MASV - varchar(8)
-           N'Lê Hồng Phong' , -- HOTEN - nvarchar(50)
-           N'Nam' , -- GIOITINH - nvarchar(5)
-           '1997/11/11' , -- NGAYSINH - date
-           '0123456789' , -- DIENTHOAI - varchar(11)
-           N'KHMT 14-3'  -- LOP - nvarchar(50)
-         )
-		 SELECT * FROM dbo.PHIEUMUON
+ VALUES  ( 'SV01' ,  N'Lê Hồng Phong' , N'Nam' , '1997/11/11' , '0123456789' ,N'KHMT 14-3' )
+  INSERT dbo.SINHVIEN 
+ VALUES  ( 'SV02' ,  N'Tạ Hải Đăng' , N'Nam' , '1996/11/12' , '022222222' ,N'KHMT 14-3' )
+  INSERT dbo.SINHVIEN 
+ VALUES  ( 'SV03' ,  N'Nguyễn Hương Giang' , N'Nữ' , '1995/9/3' , '0123456789' ,N'CNTT 14-2' )
+
+
+
+ INSERT INTO dbo.VITRISACH
+         ( MAVT, VITRI, TENKE )
+ VALUES  ( 'VT03', N'03',N'A3'  )
+  INSERT INTO dbo.VITRISACH
+         ( MAVT, VITRI, TENKE )
+ VALUES  ( 'VT04', N'04',N'A4'  )
+  INSERT INTO dbo.VITRISACH
+         ( MAVT, VITRI, TENKE )
+ VALUES  ( 'VT05', N'05',N'A5'  )
+  INSERT INTO dbo.VITRISACH
+         ( MAVT, VITRI, TENKE )
+ VALUES  ( 'VT06', N'06',N'A6'  )
+  INSERT INTO dbo.VITRISACH
+         ( MAVT, VITRI, TENKE )
+ VALUES  ( 'VT07', N'07',N'A7'  )
+  INSERT INTO dbo.VITRISACH
+         ( MAVT, VITRI, TENKE )
+ VALUES  ( 'VT08', N'08',N'A8'  )
+
+
+ INSERT INTO dbo.SACH       
+ VALUES  ( 'S02' ,N'Tây du ký' , N'Ngô Thừa Ân' , N'Du ký' , 'VT02' , N'Đại Lục' , '1968/02/03' , 10000  )
+ INSERT INTO dbo.SACH       
+ VALUES  ( 'S03' ,N'Chị Dậu' , N'Ngô Tất Tố' , N'Văn Học' , 'VT03' , N'Kim Dồng' , '1975/09/03' , 100  )
+  INSERT INTO dbo.SACH       
+ VALUES  ( 'S04' ,N'Lão Hạc' , N'Nam Cao' , N'Văn Học xưa' , 'VT04' , N'Giáo Dục' , '1954/06/03' , 100  )
+  INSERT INTO dbo.SACH       
+ VALUES  ( 'S05' ,N'Sóng' , N'Xuân Quỳnh' , N'Thơ' , 'VT05' , N'Giáo Dục' , '1997/07/11' , 100  )
+  INSERT INTO dbo.SACH       
+ VALUES  ( 'S06' ,N'Bánh Trôi Nước' , N'Bà Huyện Thanh Quan' , N'Trào Phúng' , 'VT07' , N'Giáo Dục' , '1950/02/03' , 100  )
+  INSERT INTO dbo.SACH       
+ VALUES  ( 'S07' ,N'Hoa Học Trò' , N'Nguyễn Kim Anh' , N'Báo chí' , 'VT02' , N'Thanh Niên' , '2015/02/03' , 10000  )
+  
+ 
